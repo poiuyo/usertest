@@ -1,0 +1,26 @@
+development: 
+  adapter: postgresql
+  encoding: unicode
+  database: wepay_development
+  pool: 5
+  username: wepay
+  password: root
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: wepay_test
+  pool: 5
+  username: wepay
+  password: root
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: wepay_production
+  pool: 5
+  username: wepay
+  password: root
+  host: localhost
