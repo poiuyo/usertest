@@ -7,7 +7,12 @@ class Farmer < ActiveRecord::Base
   validates :email, :format => {:with=> /@/, :messages=>" is invalid"}
   
   def password
-    password_hash ? @password ||= BCrypt::Password.new(password_hash) :nil 
+   # password_hash ? @password ||= BCrypt::Password.new(password_hash) :nil
+   if (password_hash)
+     @password ||= BCrypt::Password.new(password_hash)
+   else 
+     nil
+   end 
   end
   
   def password=(new_password)

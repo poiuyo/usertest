@@ -30,6 +30,8 @@
   <%= @farmer.produce_price %>
 </p>
 
-
+<% if (@is_admin)%>
 <%= link_to 'Edit', edit_farmer_path(@farmer) %> |
+
 <%= link_to 'Back', farmers_path %>
+<%end%>

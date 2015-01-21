@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
+  get 'test/index'
+
   get 'sessions/new'
 
-  resources :farmers
+  resources :farmers 
 
   root 'welcome#index'
   
   match 'register'=> 'farmers#new', :via=> [:get], :as => :register
   match 'login' => 'sessions#new', :via=> [:get], :as => :login
-  match '/logout' => 'sessions#destroy', :via=> [:get], :as => :logout
+  match 'logout' => 'sessions#destroy', :via=> [:get], :as => :logout
   post 'sessions/create' => 'sessions#create'
+
+ match 'iamtheadministrator' => 'test#index', :via=>[:get], :as => :admin
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   
   def destroy
     session[:farmer_id]=nil
-    redirect_to_root_path :notice=>"you have been logged out" 
+    redirect_to root_path, :notice=>"you have been logged out" 
   end
   
 end
