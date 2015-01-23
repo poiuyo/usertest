@@ -62,10 +62,10 @@ ActiveRecord::Schema.define(version: 20150119064649) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
-    t.decimal  "price",      precision: 12, scale: 2
+    t.decimal  "price",      precision: 12, scale: 3
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "active"
   end
 
 end

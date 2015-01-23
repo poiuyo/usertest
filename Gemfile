@@ -23,9 +23,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'bcrypt-ruby', '~> 3.0.0', :require=>"bcrypt"
+gem 'bcrypt-ruby', '~> 3.0.0' , :require => 'bcrypt'
 
 gem 'responders','~> 2.0'
+
+#gem 'byebug'
 
 gem 'bootstrap-sass','~>2.3.2'
 # Use ActiveModel has_secure_password
@@ -39,7 +41,7 @@ gem 'bootstrap-sass','~>2.3.2'
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
-  gem 'debugger'
+  gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
