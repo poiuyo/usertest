@@ -1,18 +1,26 @@
 Rails.application.routes.draw do
+  
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
+  resources :products do
+     get "delete"
+  end
+  
   get 'test/index'
 
   get 'sessions/new'
 
   resources :farmers 
 
-  root 'welcome#index'
-  
-  match 'register'=> 'farmers#new', :via=> [:get], :as => :register
-  match 'login' => 'sessions#new', :via=> [:get], :as => :login
-  match 'logout' => 'sessions#destroy', :via=> [:get], :as => :logout
+  root to: "products#index"  
+ 
   post 'sessions/create' => 'sessions#create'
 
- match 'iamtheadministrator' => 'test#index', :via=>[:get], :as => :admin
+   match 'register'=> 'farmers#new', :via=> [:get], :as => :register
+   #match 'login' => 'sessions#new', :via=> [:get], :as => :login
+   match 'logout' => 'sessions#destroy', :via=> [:get], :as => :logout
+   match 'login' => 'sessions#new', :via=>[:get], :as => :login
+   match 'iamtheadministrator' => 'test#index', :via=>[:get], :as => :admin
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

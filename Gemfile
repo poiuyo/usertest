@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bcrypt-ruby', '~> 3.0.0', :require=>"bcrypt"
 
+gem 'responders','~> 2.0'
 
 gem 'bootstrap-sass','~>2.3.2'
 # Use ActiveModel has_secure_password

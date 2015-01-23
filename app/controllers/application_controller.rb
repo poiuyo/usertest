@@ -5,11 +5,22 @@ class ApplicationController < ActionController::Base
   
   helper_method :current_user
   
+  helper_method :current_order
+
+def current_order
+    if !session[:order_id].nil?
+      Order.find(session[:order_id])
+    else
+      Order.new
+    end
+  end
+   
   private
   def current_user
     @current_user ||= Farmer.find(session[:farmer_id]) if session[:farmer_id]
   rescue ActiveRecord::RecordNotFound
     session[:farmer_id]=nil
   end
+  
   
 end

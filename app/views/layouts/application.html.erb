@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wefarm</title>
+  <title>ShipShop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= stylesheet_link_tag   "application", :media=> "all" %>
-  <%= javascript_include_tag "application"%>
+  <%= stylesheet_link_tag   "application", :media=> "all","data-turbolinks-track"=>true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track"=>true%>
+  
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -17,7 +19,7 @@
 					<span class="icon-bar">
 					<span class-"icon-bar">
 				</button>
-				<%= link_to 'WeFarm', root_path, :class=> 'brand'%>
+				<%= link_to 'ShopAlot', root_path, :class=> 'brand'%>
 				<div class="nav-collapse collapse">
 					<ul class="nav pull-right">
 						<%if current_user %>
@@ -26,20 +28,25 @@
 						</li>
 						<%else%>
 						<li>
-							<%= link_to 'Register',new_farmer_path%>
+							<%= link_to 'Register',register_path%>
 						</li>
 						<li>
-							<%= link_to 'Login', sessions_new_path%>
+							<%= link_to 'Login', login_path%>
 						</li>
 						<li>
 							<%= link_to 'admin', admin_path%>
 						</li>
+						<li>
+							<h3 class="cart-text"><%= render 'layouts/cart_text' %></h3>
+						</li>
 						<%end%>
 					</ul>
-				</div>
+					
 			</div>
 		</div>
 	</div>
+	
+
 
 <div class="container">
 	<div class="row-fluid">
@@ -59,8 +66,12 @@
 			<%end%>
 		</div>
 	</div>
-	<%=yield%>
-</div>
+	
+	
+	
+   <%= yield %>
+  
+
 
 </body>
 </html>

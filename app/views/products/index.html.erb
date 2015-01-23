@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="well">
+		<%= link_to "New Productssss", new_product_path, remote: true, class: "btn btn-primary"%>
+	</div>
+	
+	
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Price</th>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody id="product-index">
+			<%= render "index"%>
+		</tbody>
+	</table>
+</div>	
+<div id="product-modal" class="modal hide fade"></div>
+	
