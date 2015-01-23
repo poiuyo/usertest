@@ -10,18 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- 
  *= require_tree .
  *= require_self
- 
  */
-
-@media (min-width: 767px){
-	body { padding-top:60px;}
-}
-
-
-a.btn {color:#FFF;}
-a.btn:visited {color:#FFF;}
-
-div.navbar div.container a {color:#EEE}
