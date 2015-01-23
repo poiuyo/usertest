@@ -3,7 +3,7 @@
 <head>
   <title>ShipShop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   
   
@@ -36,12 +36,10 @@
 						<li>
 							<%= link_to 'admin', admin_path%>
 						</li>
-						<li>
-							<!-- <h3 class="cart-text"><%= render 'layouts/cart_text' %></h3> -->
-						</li>
+						
 						<%end%>
 					</ul>
-					
+				</div>
 			</div>
 		</div>
 	</div>
