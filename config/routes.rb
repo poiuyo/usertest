@@ -6,21 +6,21 @@ Rails.application.routes.draw do
      get "delete"
   end
   
-  get 'test/index'
-
+  resources :tests
+  
   get 'sessions/new'
 
-  resources :farmers 
-
+  resources :users 
+  
   root to: "products#index"  
  
   post 'sessions/create' => 'sessions#create'
-
-   match 'register'=> 'farmers#new', :via=> [:get], :as => :register
+  
+    match 'register'=> 'users#new', :via=> [:get], :as => :register
    #match 'login' => 'sessions#new', :via=> [:get], :as => :login
    match 'logout' => 'sessions#destroy', :via=> [:get], :as => :logout
    match 'login' => 'sessions#new', :via=>[:get], :as => :login
-   match 'iamtheadministrator' => 'test#index', :via=>[:get], :as => :admin
+   match 'iamtheadministrator' => 'tests#index', :via=>[:get], :as => :admin
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

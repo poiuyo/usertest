@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   
   helper_method :current_order
+  
+  helper_method :user
 
 def current_order
     if !session[:order_id].nil?
@@ -14,12 +16,16 @@ def current_order
       Order.new
     end
   end
+  
+  def user
+    user = @user
+  end
    
   private
   def current_user
-    @current_user ||= Farmer.find(session[:farmer_id]) if session[:farmer_id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   rescue ActiveRecord::RecordNotFound
-    session[:farmer_id]=nil
+    session[:user_id]=nil
   end
   
   

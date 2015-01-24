@@ -1,5 +1,5 @@
-class Farmer < ActiveRecord::Base
-   
+class User < ActiveRecord::Base
+     
   validates :password, :presence=> true
   validates :password, :length=>{:in=> 5..200}
   validates :name, :email, :presence=> true
@@ -21,9 +21,9 @@ class Farmer < ActiveRecord::Base
   end
   
   def self.authenticate(email, test_password)
-    farmer= Farmer.find_by_email(email)
-    if farmer && farmer.password == test_password
-      farmer
+    user= User.find_by_email(email)
+    if user && user.password == test_password
+      user
     else nil
     end
   end
