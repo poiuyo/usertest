@@ -1,22 +1,35 @@
-<%= form_for @product, remote: true, html: { class: "form-horizontal", style: "display:inline;" } do |f| %>
-  <div class="modal-body">
-    <ul class="errors"></ul>
 
-    <div class="control-group">
+<div class="row">
+	<div class="col-xs-6"></div>
+	
+	 <div class="col-xs-6">
+	 	<div class="modal-content">
+    <%= form_for @product, remote: true, html: { class: "form-horizontal", style: "display:inline;" } do |f| %>
+   
+    <ul class="errors">
+	 </ul>
+	<ul>
+    <div class="form-group">
       <%= f.label :name, class:"control-label" %>
       <div class="controls">
         <%= f.text_field :name %>
       </div>
     </div>
-    <div class="control-group">
+      
+    <div class="form-group">
       <%= f.label :price, class: "control-label" %>
       <div class="controls">
         <%= f.text_field :price %>
       </div>
     </div>
-  </div>
-  <div class="modal-footer">
+     
+   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
-    <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
-  </div>
-<% end %>
+    <%= link_to "Cancel", "#", class: "btn btn-info", data: {dismiss: "modal"} %>
+   </div>
+         
+          <% end %>
+     </ul>
+       </div>
+    </div>
+</div>

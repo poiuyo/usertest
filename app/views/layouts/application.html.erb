@@ -10,7 +10,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
@@ -20,7 +19,8 @@
 					<span class-"icon-bar">
 				</button>
 				<%= link_to 'ShopAlot', root_path, :class=> 'brand'%>
-				<div class="nav-collapse collapse">
+				
+				<div class="nav-collapse collapse pull-right">
 					<ul class="nav pull-right">
 						<%if current_user %>
 						<li>
@@ -45,6 +45,19 @@
 	</div>
 	
 
+<div class="container">
+  <div class="row-fluid">
+       <div class="col-xs-6">
+       	<ul class="nav pull-right">
+        <h1><%= link_to "My Store", root_path %></h1>
+       </div>
+      <div class="col-xs-6 text-right">
+        <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+        </ul>
+      </div>
+</div>
+
+
 
 <div class="container">
 	<div class="row-fluid">
@@ -64,16 +77,9 @@
 			<%end%>
 		</div>
 	</div>
-	
-	<div class="container">
-    <div class="row">
-      <div class="col-xs-6">
-        <h1><%= link_to "My Store", root_path %></h1>
-      </div>
-      <div class="col-xs-6 text-right">
-        <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
-      </div>
-    </div>
+</div>
+
+
 	
    <%= yield %>
   
