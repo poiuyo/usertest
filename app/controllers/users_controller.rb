@@ -1,14 +1,9 @@
-class UsersController < ApplicationController
+class UsersController < GenericController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
  
- helper_method :getuserid
- 
- def getuserid
-   @getuserid = User.find(params[:id])
- end
    
   def index
-    @users = User.all
+   super
    #redirect_to root_path, :notice => "log in admin"
   end
 
@@ -25,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+     super
     if current_user.id != @user.id  
       redirect_to @user
     end

@@ -1,11 +1,14 @@
-class TestsController < ApplicationController
+class TestsController < GenericController
   
    
   def index
-    @users = User.all
+    super
   end
   
   def edit
-    @user = User.find(params[:id])
+      super
   end
+  
+ 
+  
 end
