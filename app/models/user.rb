@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+     has_many :order_status 
      
   validates :password, :presence=> true
   validates :password, :length=>{:in=> 5..200}

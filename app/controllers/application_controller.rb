@@ -17,9 +17,7 @@ def current_order
     end
   end
   
-  def user
-    user = @user
-  end
+  
    
   private
   def current_user

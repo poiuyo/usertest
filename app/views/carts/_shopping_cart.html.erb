@@ -16,3 +16,8 @@
     <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
   <% end %>
 <% end %>
+
+<div class="container">
+  <h4>Current total <%= number_to_currency current_order.subtotal%></h4>
+  <h4>Number of items <%=  current_order.order_items.size%></h4>
+</div>

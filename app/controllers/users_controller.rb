@@ -1,9 +1,9 @@
-class UsersController < GenericController
+class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
  
    
   def index
-   super
+    @users = User.all
    #redirect_to root_path, :notice => "log in admin"
   end
 
@@ -20,10 +20,12 @@ class UsersController < GenericController
   end
 
   def edit
-     super
-    if current_user.id != @user.id  
+     @user = User.find(params[:id])
+   if current_user.id != @user.id  
       redirect_to @user
-    end
+    else
+      
+   end
   end
 
  
@@ -36,8 +38,7 @@ class UsersController < GenericController
      else 
        render action: "new"
      end
- end   
-  
+ end     
  
  
   def update
@@ -62,6 +63,10 @@ class UsersController < GenericController
     end
   end
 
+
+def iamtheadministrator
+   @user = current_user
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

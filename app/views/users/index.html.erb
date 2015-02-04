@@ -1,2 +1,9 @@
-<h1>Welcome to my new program</h1>
-<p>THIS is the index page thank you.</p>
+<p>adminstration</p>
+<% @users.each do |f|%>
+<%= f.name %>
+<%= f.email %>
+<%= f.password %>
+<br>
+ <td><%= link_to 'Edit',edit_user_path(f) %></td>
+ <br>
+<%end%>

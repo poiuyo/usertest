@@ -25,6 +25,9 @@
 						<li>
 							<%= link_to 'Logout', logout_path%>
 						</li>
+						<li>
+							<%= link_to 'admin', admin_path%>
+						</li>
 						<%else%>
 						<li>
 							<%= link_to 'Register',register_path%>
@@ -33,8 +36,9 @@
 							<%= link_to 'Login', login_path%>
 						</li>
 						<li>
-							<%= link_to 'admin', admin_path%>
+							<%= link_to 'Administrator', administrator_path%>
 						</li>
+						
 						
 						<%end%>
 					</ul>

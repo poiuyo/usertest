@@ -20,6 +20,8 @@ class OrderItem < ActiveRecord::Base
     unit_price * quantity
   end
 
+
+
 private
   def product_present
     if product.nil?
